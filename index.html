@@ -1,254 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pagamento</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #ffffff;
-}
-
-/* TOPO */
-.topo {
-    background: #7b1fa2;
-    height: 45px;
-}
-
-/* TELAS */
-.tela {
-    display: none;
-}
-
-.ativa {
-    display: block;
-}
-
-/* CONTAINER */
-.container {
-    max-width: 420px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* FORM */
-label {
-    font-size: 14px;
-    margin-top: 15px;
-    display: block;
-}
-
-input, select {
-    width: 100%;
-    padding: 12px;
-    margin-top: 6px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-
-.botao {
-    width: 100%;
-    padding: 14px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-}
-
-.roxo {
-    background: #7b1fa2;
-    color: #fff;
-}
-
-/* LOGO RESPONSIVA */
-.logo {
-    width: clamp(100px, 30vw, 160px);
-    height: auto;
-    border-radius: 50%;
-    display: block;
-    margin: 15px auto;
-}
-
-/* COMPROVANTE */
-.titulo {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.card {
-    background: #f5f5f5;
-    border-radius: 10px;
-    padding: 15px;
-}
-
-.linha {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-}
-
-.icone {
-    width: 30px;
-    text-align: center;
-    font-size: 18px;
-}
-
-.conteudo {
-    flex: 1;
-}
-
-.rotulo {
-    font-size: 12px;
-    color: #666;
-}
-
-.valor {
-    font-size: 22px;
-    font-weight: bold;
-    color: #7b1fa2;
-}
-
-.texto {
-    font-size: 15px;
-}
-
-.divisor {
-    border-top: 1px solid #ddd;
-    margin: 8px 0;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosméticos VW - Venda Online</title>
+   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Cosméticos VW</h1>
+        <p>Produtos de beleza para você</p>
+    </header>
 
-<div class="topo"></div>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Produtos</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
 
-<!-- TELA 1 -->
-<div class="tela ativa" id="telaForm">
     <div class="container">
-        <h3>Pagamento</h3>
+        <section id="home">
+            <h2>Bem-vindo à Nossa Loja</h2>
+            <p>Descubra os melhores produtos de cosméticos para realçar sua beleza natural.</p>
+        </section>
 
-        <label>Restaurante</label>
-        <select id="restaurante">
-            <option value="@dlevebar">D'leve Bar</option>
-            <option value="@restcentral">Restaurante Central</option>
-        </select>
+        <section id="products">
+            <h2>Nossos Produtos</h2>
+            <div class="products">
+                <div class="product-card">
+                    <div class="product-image"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Creme Hidratante Facial"></div>
+                    <div class="product-info">
+                        <div class="product-name">Creme Hidratante Facial</div>
+                        <div class="product-price">R$ 45,00</div>
+                        <button class="add-to-cart" onclick="addToCart('Creme Hidratante Facial', 45.00)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Imagem do Produto</div>
+                    <div class="product-info">
+                        <div class="product-name">Batom Matte Vermelho</div>
+                        <div class="product-price">R$ 25,00</div>
+                        <button class="add-to-cart" onclick="addToCart('Batom Matte Vermelho', 25.00)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Máscara de Cílios"></div>
+                    <div class="product-info">
+                        <div class="product-name">Máscara de Cílios</div>
+                        <div class="product-price">R$ 30,00</div>
+                        <button class="add-to-cart" onclick="addToCart('Máscara de Cílios', 30.00)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Perfume Floral"></div>
+                    <div class="product-info">
+                        <div class="product-name">Perfume Floral</div>
+                        <div class="product-price">R$ 80,00</div>
+                        <button class="add-to-cart" onclick="addToCart('Perfume Floral', 80.00)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Imagem do Produto</div>
+                    <div class="product-info">
+                        <div class="product-name">Shampoo Antiqueda</div>
+                        <div class="product-price">R$ 35,00</div>
+                        <button class="add-to-cart" onclick="addToCart('Shampoo Antiqueda', 35.00)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Imagem do Produto</div>
+                    <div class="product-info">
+                        <div class="product-name">Base Líquida</div>
+                        <div class="product-price">R$ 50,00</div>
+                        <button class="add-to-cart" onclick="addToCart('Base Líquida', 50.00)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <label>Valor (R$)</label>
-        <input type="number" id="valor" step="0.01" placeholder="0,00">
-
-        <button class="botao roxo" onclick="gerarComprovante()">Continuar</button>
+        <section id="contact">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco através do nosso grupo no WhatsApp:</p>
+            <a href="https://chat.whatsapp.com/Jf4k092c9xx9ZlYWku9Xfn" target="_blank" class="whatsapp-link">Entrar no Grupo WhatsApp</a>
+        </section>
     </div>
-</div>
 
-<!-- TELA 2 -->
-<div class="tela" id="telaComprovante">
-    <div class="container">
+    <footer>
+        <p>&copy; 2023 Cosméticos VW. Todos os direitos reservados.</p>
+    </footer>
 
-        <img src="logo.png" class="logo">
+    <div class="cart" onclick="toggleCart()">
+        🛒
+        <span class="cart-count" id="cart-count">0</span>
+    </div>
 
-        <div class="titulo">Pagamento realizado</div>
 
-        <div class="card">
 
-            <div class="linha">
-                <div class="icone">💲</div>
-                <div class="conteudo">
-                    <div class="valor" id="valorFinal"></div>
-                    <div class="rotulo">Valor pago via App</div>
-                </div>
-            </div>
+    <div id="cart-section" class="cart-section">
+        <h3>Carrinho</h3>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+        <button class="checkout-btn" onclick="showPayment()">Finalizar Compra</button>
+        <button class="close-cart" onclick="toggleCart()">Fechar</button>
+    </div>
 
-        
-            <div class="linha">
-                <div class="icone">▶</div>
-                <div class="conteudo">
-                    <div class="rotulo">DESTINO</div>
-                    <div class="texto" id="destino"></div>
-                </div>
-            </div>
-
-            
-            <div class="linha">
-                <div class="icone"></div>
-                <div class="conteudo">
-                    <div class="rotulo">ORIGEM</div>
-                    <div class="texto">Mirosmar Silva</div>
-                </div>
-            </div>
-
-            <div class="divisor"></div>
-
-            <div class="linha">
-                <div class="icone">📄</div>
-                <div class="conteudo">
-                    <div class="rotulo">DATA</div>
-                    <div class="texto" id="data"></div>
-                </div>
-            </div>
-
-            <div class="linha">
-                <div class="icone"></div>
-                <div class="conteudo">
-                    <div class="rotulo">TRANSAÇÃO</div>
-                    <div class="texto" id="transacao"></div>
-                </div>
-            </div>
-
-            <div class="linha">
-                <div class="icone"></div>
-                <div class="conteudo">
-                    <div class="rotulo">STATUS</div>
-                    <div class="texto">Confirmado</div>
-                </div>
-            </div>
-
+    <div id="payment-section" class="payment-section">
+        <h3>Pagamento via Pix</h3>
+        <p>Total a pagar: <span id="payment-total"></span></p>
+        <div class="pix-details">
+            <p>Chave Pix: (11) 99999-9999</p>
+            <p>QR Code:</p>
+            <div class="qr-code">QR Code Placeholder</div>
+            <button onclick="copyPixKey()">Copiar Chave Pix</button>
         </div>
-
-        <button class="botao roxo" onclick="compartilhar()">Compartilhar</button>
-        <button class="botao" onclick="window.print()">Ver comprovante</button>
-
+        <button class="close-payment" onclick="hidePayment()">Voltar ao Carrinho</button>
     </div>
-</div>
 
-<script>
-function gerarComprovante() {
-    const valor = document.getElementById("valor").value;
-    const restaurante = document.getElementById("restaurante").value;
+    <script>
+        let cart = [];
+        let cartCount = 0;
 
-    if (!valor) {
-        alert("Informe o valor");
-        return;
-    }
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            cartCount++;
+            document.getElementById('cart-count').innerText = cartCount;
+            updateCartDisplay();
+        }
 
-    document.getElementById("valorFinal").innerText =
-        "R$ " + parseFloat(valor).toFixed(2).replace(".", ",");
+        function toggleCart() {
+            const cartSection = document.getElementById('cart-section');
+            cartSection.classList.toggle('show');
+            updateCartDisplay();
+        }
 
-    document.getElementById("destino").innerText = restaurante;
-    document.getElementById("data").innerText = new Date().toLocaleString("pt-BR");
-    document.getElementById("transacao").innerText =
-        Math.floor(100000000 + Math.random() * 900000000);
-
-    document.getElementById("telaForm").classList.remove("ativa");
-    document.getElementById("telaComprovante").classList.add("ativa");
-}
-
-function compartilhar() {
-    if (navigator.share) {
-        navigator.share({
-            title: "Pagamento realizado",
-            text: "Pagamento confirmado"
-        });
-    } else {
-        alert("Compartilhamento não disponível");
-    }
-}
-</script>
-
+        function updateCartDisplay() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            const cartTotalDiv = document.getElementById('cart-total');
+            cartItemsDiv.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+                itemDiv.innerHTML = `<span>${item.name}</span><span>R$ ${item.price.toFixed(2).replace('.', ',')}</span>`;
+                cartItemsDiv.appendChild(itemDiv);
+                total += item.price;
+            });
+            cartTotalDiv.innerText = `Total: R$ ${total.toFixed(2).replace('.', ',')}`;
+        }
+    </script>
 </body>
 </html>
